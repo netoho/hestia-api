@@ -1,11 +1,72 @@
 {
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": ".",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "es6",
+      "es2020",
+      "esnext.asynciterable"
+    ],
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": "./src",
+    "strict": true,
+    "strictPropertyInitialization": false, 
     "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "experimentalDecorators": true, 
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "paths": {
+      "@/*": [
+        "*"
+      ],
+      "@Config/*": [
+        "core/infrastructure/config/*"
+      ],
+      "@Database/*": [
+        "core/infrastructure/database/*"
+      ],
+      "@Src/*": [
+        "*"
+      ],
+      "@Utils/*": [
+        "core/application/*"
+      ],
+      "@Core/*": [
+        "core/*"
+      ],
+      "@Errors/*": [
+        "core/infrastructure/errors/*"
+      ]
+    },
+    "types": [
+      "node",
+      "jest"
+    ],
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests",
+    "**/*.spec.ts"
+  ]
 }
